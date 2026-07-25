@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package examples;
+
+// Person represents a person with basic information
+message Person {
+  // first name of the person
+  string first_name = 1;
+
+  // last name of the person
+  string last_name = 2;
+
+  // age in years
+  int32 age = 3;
+
+  // whether the person is active
+  bool active = 4;
+
+  // associated address
+  Address address = 5;
+
+  // middle name, absent when the person has none
+  optional string middle_name = 6;
+
+  // height in centimetres, absent when unknown
+  optional int32 height_cm = 7;
+}
+
+// Address represents a physical address
+message Address {
+  // street address
+  string street = 1;
+
+  // city name
+  string city = 2;
+
+  // state or province
+  string state = 3;
+
+  // postal code
+  string postal_code = 4;
+}
+
+// Book represents a book with metadata
+message Book {
+  // ISBN identifier
+  string isbn = 1;
+
+  // book title
+  string title = 2;
+
+  // number of pages
+  int32 pages = 3;
+
+  // author information
+  Person author = 4;
+
+  // tags for categorization
+  repeated string tags = 5;
+
+  // metadata as key-value pairs
+  map<string, string> metadata = 6;
+
+  // subtitle, absent when the book has none
+  optional string subtitle = 7;
+}
+
+// Library represents a collection of books
+message Library {
+  // library name
+  string name = 1;
+
+  // books in the library
+  repeated Book books = 2;
+}

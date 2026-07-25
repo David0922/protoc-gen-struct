@@ -1,0 +1,7 @@
+.claude
+CLAUDE.md
+CODE_REVIEW_FIXES.md
+
+# build artifacts
+/examples/output
+/protoc-gen-struct
